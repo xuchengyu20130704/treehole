@@ -185,3 +185,273 @@ textarea:focus {
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.mood-option i {
+    margin-right: 5px;
+}
+
+.mood-selector input[type="radio"] {
+    display: none;
+}
+
+.mood-selector input[type="radio"]:checked + label {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.mood-option.happy {
+    background-color: rgba(46,204,113,0.1);
+    color: #2ecc71;
+    border: 1px solid rgba(46,204,113,0.3);
+}
+
+.mood-option.sad {
+    background-color: rgba(52,152,219,0.1);
+    color: #3498db;
+    border: 1px solid rgba(52,152,219,0.3);
+}
+
+.mood-option.angry {
+    background-color: rgba(231,76,60,0.1);
+    color: #e74c3c;
+    border: 1px solid rgba(231,76,60,0.3);
+}
+
+/* 秘密卡片样式 */
+.secrets-container {
+    margin: 20px 0;
+}
+
+.secret-card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.secret-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.secret-content {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.secret-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #7f8c8d;
+}
+
+.secret-date {
+    font-style: italic;
+}
+
+.secret-id {
+    font-family: monospace;
+}
+
+/* 加载指示器 */
+.loading-indicator {
+    text-align: center;
+    padding: 30px;
+    display: none;
+}
+
+.loading-indicator .spinner {
+    font-size: 2rem;
+    color: #3498db;
+    margin-bottom: 10px;
+}
+
+/* 错误消息 */
+.error-message {
+    text-align: center;
+    padding: 30px;
+    display: none;
+}
+
+.error-message i {
+    font-size: 2.5rem;
+    color: #e74c3c;
+    margin-bottom: 15px;
+}
+
+.error-message p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+/* 没有秘密的提示 */
+.no-secrets {
+    text-align: center;
+    padding: 40px 20px;
+    display: none;
+}
+
+.no-secrets i {
+    font-size: 3rem;
+    color: #95a5a6;
+    margin-bottom: 20px;
+}
+
+.no-secrets p {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+}
+
+/* 页脚样式 */
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    border-top: 1px solid #eee;
+}
+
+.footer i {
+    margin-right: 5px;
+}
+
+.disclaimer {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: #bdc3c7;
+}
+
+.privacy-notice {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    margin-top: 20px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .mood-selector {
+        flex-direction: column;
+    }
+    
+    .secret-card {
+        padding: 15px;
+    }
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.secret-card {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* 搜索框样式 */
+.search-box {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+    font-size: 1rem;
+}
+
+.search-box button {
+    padding: 0 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background-color: #2980b9;
+}
+
+/* 控制按钮组 */
+.secret-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+/* 提示框样式 */
+.alert-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.alert {
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: white;
+    animation: slideIn 0.3s ease forwards;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+}
+
+.alert i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.alert-success {
+    background-color: #2ecc71;
+}
+
+.alert-error {
+    background-color: #e74c3c;
+}
+
+.alert-info {
+    background-color: #3498db;
+}
+
+.fade-out {
+    animation: fadeOut 0.5s ease forwards;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
