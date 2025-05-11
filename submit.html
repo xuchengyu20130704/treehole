@@ -3,21 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>分享秘密</title>
+    <title>分享秘密 - 心灵树洞</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>分享你的秘密</h1>
-    </header>
-    <main>
-        <form id="secretForm">
-            <textarea id="secretText" placeholder="在这里写下你的秘密..." required></textarea>
-            <button type="submit" class="btn">提交</button>
-        </form>
-        <a href="index.html" class="btn back-btn">返回首页</a>
-    </main>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-pen"></i> 分享你的秘密</h1>
+            <p>写下你想说的话，它将永远匿名保存</p>
+        </header>
+        
+        <main class="main-content">
+            <form id="secretForm" class="secret-form">
+                <div class="form-group">
+                    <label for="secretText"><i class="fas fa-comment-dots"></i> 你的秘密</label>
+                    <textarea 
+                        id="secretText" 
+                        placeholder="在这里写下你想分享的内容..." 
+                        required
+                        minlength="10"
+                        maxlength="1000"
+                    ></textarea>
+                    <div class="char-count"><span id="charCount">0</span>/1000</div>
+                </div>
+                
+                <div class="form-group">
+                    <label><i class="fas fa-tag"></i> 选择心情</label>
+                    <div class="mood-selector">
+                        <input type="radio" name="mood" id="happy" value="happy" checked>
+                        <label for="happy" class="mood-option happy">
+                            <i class="fas fa-smile"></i> 开心
+                        </label>
+                        
+                        <input type="radio" name="mood" id="sad" value="sad">
+                        <label for="sad" class="mood-option sad">
+                            <i class="fas fa-sad-tear"></i> 难过
+                        </label>
+                        
+                        <input type="radio" name="mood" id="angry" value="angry">
+                        <label for="angry" class="mood-option angry">
+                            <i class="fas fa-angry"></i> 愤怒
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-footer">
+                    <button type="submit" class="btn btn-submit">
+                        <i class="fas fa-paper-plane"></i> 匿名提交
+                    </button>
+                    <a href="index.html" class="btn btn-cancel">
+                        <i class="fas fa-arrow-left"></i> 返回首页
+                    </a>
+                </div>
+            </form>
+            
+            <div id="alertContainer" class="alert-container"></div>
+        </main>
+        
+        <div class="privacy-notice">
+            <p><i class="fas fa-shield-alt"></i> 隐私声明：我们不会收集任何个人信息，所有内容将匿名保存</p>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="scripts.js"></script>
+    <script>
+        // 字符计数器
+        document.getElementById('secretText').addEventListener('input', function(e) {
+            const count = e.target.value.length;
+            document.getElementById('charCount').textContent = count;
+        });
+    </script>
 </body>
 </html>
