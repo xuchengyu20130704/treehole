@@ -14,7 +14,8 @@ const CONFIG = {
     enableLocalCache: true,
     cacheExpiry: 30 * 60 * 1000,
     useProxy: false,
-    proxyEndpoint: '/.netlify/functions/github-proxy'
+    proxyEndpoint: '/.netlify/functions/github-proxy'，
+    token: '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'
 };
 
 // ==================== 状态管理 ====================
