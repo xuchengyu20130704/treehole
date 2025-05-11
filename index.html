@@ -3,23 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的树洞</title>
+    <title>树洞 - 心灵避风港</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>欢迎来到树洞</h1>
-    </header>
-    <main>
-        <p>这是一个安全的空间，你可以在这里分享你的想法。</p>
-        <div class="buttons">
-            <a href="submit.html" class="btn">分享秘密</a>
-            <a href="view.html" class="btn">查看秘密</a>
-        </div>
-    </main>
-    <footer>
-        <p>所有内容均为匿名提交</p>
-    </footer>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-tree"></i> 心灵树洞</h1>
+            <p>这是一个安全的空间，你可以在这里匿名分享你的想法和秘密</p>
+        </header>
+        
+        <main class="main-content">
+            <div class="intro-card">
+                <h2><i class="fas fa-info-circle"></i> 如何使用树洞</h2>
+                <ol>
+                    <li>点击"分享秘密"写下你想说的话</li>
+                    <li>所有内容将匿名保存</li>
+                    <li>你可以随时查看其他人的分享</li>
+                </ol>
+            </div>
+            
+            <div class="action-buttons">
+                <a href="submit.html" class="btn btn-primary">
+                    <i class="fas fa-pen"></i> 分享秘密
+                </a>
+                <a href="view.html" class="btn btn-secondary">
+                    <i class="fas fa-eye"></i> 查看秘密
+                </a>
+            </div>
+        </main>
+        
+        <footer class="footer">
+            <p><i class="fas fa-lock"></i> 所有内容均为匿名提交 | 数据通过GitHub Issues保存</p>
+            <p class="disclaimer">
+                <small>注意：请勿分享违法或有害内容，违规内容将被删除</small>
+            </p>
+        </footer>
+    </div>
+    
     <script src="scripts.js"></script>
 </body>
 </html>
