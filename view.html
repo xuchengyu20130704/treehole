@@ -3,17 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>查看秘密</title>
+    <title>树洞秘密 - 心灵树洞</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>树洞的秘密</h1>
-    </header>
-    <main>
-        <div id="secretsContainer"></div>
-        <a href="index.html" class="btn back-btn">返回首页</a>
-    </main>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-box-open"></i> 树洞的秘密</h1>
+            <p>这里收集了大家匿名分享的心声</p>
+        </header>
+        
+        <main class="main-content">
+            <div class="secret-controls">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="搜索内容...">
+                    <button id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
+                <button id="refreshBtn" class="btn btn-refresh">
+                    <i class="fas fa-sync-alt"></i> 刷新
+                </button>
+            </div>
+            
+            <div id="loadingIndicator" class="loading-indicator">
+                <div class="spinner"><i class="fas fa-circle-notch fa-spin"></i></div>
+                <p>正在加载秘密...</p>
+            </div>
+            
+            <div id="secretsContainer" class="secrets-container"></div>
+            
+            <div id="loadMoreContainer" class="load-more">
+                <button id="loadMoreBtn" class="btn btn-load-more">
+                    <i class="fas fa-chevron-down"></i> 加载更多
+                </button>
+            </div>
+            
+            <div id="noSecretsMessage" class="no-secrets" style="display: none;">
+                <i class="fas fa-box-open"></i>
+                <p>树洞里还没有秘密...</p>
+                <a href="submit.html" class="btn btn-primary">
+                    <i class="fas fa-pen"></i> 成为第一个分享的人
+                </a>
+            </div>
+            
+            <div id="errorMessage" class="error-message" style="display: none;">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p id="errorText">加载失败，请稍后再试</p>
+                <button onclick="window.location.reload()" class="btn btn-retry">
+                    <i class="fas fa-redo"></i> 重新加载
+                </button>
+            </div>
+            
+            <div class="back-home">
+                <a href="index.html" class="btn btn-home">
+                    <i class="fas fa-home"></i> 返回首页
+                </a>
+            </div>
+        </main>
+        
+        <footer class="footer">
+            <p><i class="fas fa-heart"></i> 感谢你的分享 - 这里是一个没有评判的安全空间</p>
+        </footer>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="scripts.js"></script>
 </body>
 </html>
