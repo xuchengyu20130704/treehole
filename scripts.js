@@ -15,7 +15,7 @@ const CONFIG = {
     cacheExpiry: 30 * 60 * 1000,
     useProxy: false,
     proxyEndpoint: '/.netlify/functions/github-proxy'，
-    token: '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'
+    token: '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'
 };
 
 // ==================== 状态管理 ====================
